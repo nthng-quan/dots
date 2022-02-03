@@ -1,0 +1,16 @@
+import = [
+    "themes/themes/kanagawa_wave.toml"
+]
+
+# shell = "C:/Program Files/PowerShell/7/pwsh.exe"
+# working_directory = "D:/"
+
+[window]
+dimensions = { columns = 130, lines = 35 }
+opacity = 1.0
+blur = true
+dynamic_title = true
+
+[font]
+normal = { family = "JetBrainsMono Nerd Font", style = "Regular" }
+size=13.5

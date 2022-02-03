@@ -1,0 +1,8 @@
+alias ht='htop'
+alias rr='ranger'
+
+alias sudo apt install='install'
+#alias sudo apt remove='remove'
+
+alias sudo apt upgrade='upgrade'
+alias sudo apt update='update'

@@ -1,0 +1,83 @@
+{
+  "Main If Block (sync)": {
+    "prefix": "mainif",
+    "body": [
+      "def main():",
+      "    pass",
+      "",
+      "if __name__ == \"__main__\":",
+      "    main()",
+      ""
+    ],
+    "description": "Simple main() with if __name__ == '__main__'"
+  },
+  "Main If Block (asyncio)": {
+    "prefix": "amainif",
+    "body": [
+      "import asyncio",
+      "",
+      "async def main():",
+      "    pass",
+      "",
+      "if __name__ == \"__main__\":",
+      "    asyncio.run(main())",
+      ""
+    ],
+    "description": "Async main() with if __name__ == '__main__'"
+  },
+  "Logger Setup": {
+    "prefix": "log",
+    "body": [
+      "import logging",
+      "logging.basicConfig(level=logging.${1:DEBUG})",
+      "logger = logging.getLogger(__name__)"
+    ],
+    "description": "Basic logging setup"
+  },
+  "Function Docstring": {
+    "prefix": "doc",
+    "body": [
+      "\"\"\"",
+      "${1:Summary of the function}",
+      "",
+      "Args:",
+      "    ${2:param} (${3:type}): ${4:description}",
+      "",
+      "Returns:",
+      "    ${5:type}: ${6:description}",
+      "\"\"\""
+    ],
+    "description": "Function docstring template"
+  },
+  "Import Bert NER Model": {
+    "prefix": "imbert",
+    "body": [
+      "from transformers import AutoModelForTokenClassification, AutoTokenizer",
+      "",
+      "model = AutoModelForTokenClassification.from_pretrained(${1:model_path})",
+      "tokenizer = AutoTokenizer.from_pretrained(${1:model_path})"
+    ],
+    "description": "Import BERT model and tokenizer for NER"
+  },
+  "Type Ignore Inline": {
+    "prefix": "tignn",
+    "body": [
+      "# type:ignore"
+    ],
+    "description": "Add type:ignore comment"
+  },
+  "Format Skip Inline": {
+    "prefix": "fms",
+    "body": [
+      "# fmt:skip"
+    ],
+    "description": "Add # fmt:skip comment"
+  },
+  "Format Off Inline": {
+    "prefix": "fmo",
+    "body": [
+      "# fmt:off"
+    ],
+    "description": "Add # fmt:off comment"
+  }
+}

@@ -2,7 +2,6 @@ return {
   {
     "jpalardy/vim-slime",
     keys = {
-      { "<leader>r", desc = "Slime" },
       { "<leader>rC", "<cmd>SlimeConfig<cr>", desc = "Slime Config" },
       { "<leader>rc", "<Plug>SlimeSendCell<BAR>/^# %%<CR>", desc = "Slime Send Cell" },
       { "<leader>rs", ":<C-u>'<,'>SlimeSend<CR>", mode = "v", desc = "Slime Send Selection" },
@@ -29,6 +28,7 @@ return {
     },
     event = "VeryLazy",
     keys = {
+      { "C-c", false }, -- disable Ctrl-C
       { "<leader>vs", "<cmd>VenvSelect<cr>", desc = "Select Python venv" },
       { "<leader>vS", "<cmd>VenvSelectCached<cr>", desc = "Select Python venv (cached)" },
     },

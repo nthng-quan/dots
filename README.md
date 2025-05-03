@@ -9,7 +9,7 @@
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```
 
-- Neovim stable
+- Install Neovim stable
 
 ```bash
 wget https://github.com/neovim/neovim/releases/download/stable/nvim-linux-x86_64.tar.gz
@@ -17,7 +17,7 @@ tar -xzf nvim-linux-x86_64.tar.gz
 mv nvim-linux-x86_64/bin/nvim /usr/local/bin/
 ```
 
-- Neovim setup
+- Basic setup
 
   - `gcc`, `python`:
 
@@ -47,14 +47,14 @@ mv nvim-linux-x86_64/bin/nvim /usr/local/bin/
     cp ya yazi /usr/local/bin/
     ```
 
-- Neovim config clean up
+  - Neovim config clean up
 
-```bash
-mv ~/.config/nvim{,.bak}
-mv ~/.local/share/nvim{,.bak}
-mv ~/.local/state/nvim{,.bak}
-mv ~/.cache/nvim{,.bak}
-```
+  ```bash
+  mv ~/.config/nvim{,.bak}
+  mv ~/.local/share/nvim{,.bak}
+  mv ~/.local/state/nvim{,.bak}
+  mv ~/.cache/nvim{,.bak}
+  ```
 
 - Setup remote clipboard as well as GUI apps for neovim (X11Forwarding)
 
@@ -71,8 +71,11 @@ mv ~/.cache/nvim{,.bak}
 
     - Run Xlaunch with `-ac`, Multiple windows (-1)
 
-- Apply config
+- Apply config (stow)
 
   ```bash
-  cp -r nvim/ ~/.config/nvim/
+  sudo apt install stow
+
+  stow -t ~ nvim
+  stow -t ~ tmux
   ```

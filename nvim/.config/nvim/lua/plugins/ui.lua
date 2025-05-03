@@ -3,6 +3,9 @@ return {
     "LazyVim/LazyVim",
     opts = {
       colorscheme = "catppuccin-mocha",
+      icons = {
+        diagnostics = { Error = "E", Warn = "W", Info = "I", Hint = "H" },
+      },
     },
   },
   {
@@ -17,7 +20,6 @@ return {
   {
     "snacks.nvim",
     opts = {
-      scroll = { enabled = false },
       keys = {},
       dashboard = {
         preset = {
@@ -67,7 +69,7 @@ return {
           return {
             ft_icon and { " ", ft_icon, " ", guibg = ft_color, guifg = helpers.contrast_color(ft_color) } or "",
             " ",
-            { filename, gui = modified and "bold,italic" or "bold" },
+            { filename, gui = modified and "bold,italic" or "" },
             " ",
             guibg = "#363a4f",
           }

@@ -3,10 +3,11 @@ return {
     "williamboman/mason.nvim",
     opts = function(_, opts)
       vim.list_extend(opts.ensure_installed, {
-        "pylint",
-        "pyright",
-        "python-lsp-server",
+        -- "pylint",
+        -- "pyright",
+        -- "python-lsp-server",
         "ruff",
+        "basedpyright",
         "docker-compose-language-service",
         "dockerfile-language-server",
         "hadolint",
@@ -47,30 +48,23 @@ return {
       -- You can also define any custom formatters here.
       formatters = {
         injected = { options = { ignore_errors = true } },
-        -- black = {
-        --   prepend_args = { "--line-length", "80" },
-        -- },
       },
-      linters = {
-        python = {
-          source = { "flake8" },
-          args = { "--ignore", "E501,E203" },
-        },
-      },
+      linters = {},
     },
   },
   {
     "neovim/nvim-lspconfig",
     opts = {
       servers = {
-        pylsp = {
+        basedpyright = {
           settings = {
-            pylsp = {
-              plugins = {
-                pycodestyle = {
-                  ignore = { "E501", "W503" },
-                  maxLineLength = 90,
-                },
+            basedpyright = {
+              typeCheckingMode = "standard",
+              reportUnusedImport = true,
+              reportAny = false,
+              analysis = {
+                diagnosticMode = "openFilesOnly",
+                inlayHints = { callArgumentNames = true },
               },
             },
           },

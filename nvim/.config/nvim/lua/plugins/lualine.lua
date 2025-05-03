@@ -93,7 +93,7 @@ return {
           -- { "branch" },
         },
         lualine_z = {
-          { "progress", separator = " ", padding = { left = 1, right = 0 } },
+          { "progress", separator = "|", padding = { left = 1, right = 1 } },
           { "location", padding = { left = 0, right = 1 } },
         },
       },
@@ -111,50 +111,23 @@ return {
       -- TABLINE
       --
       tabline = {
-        lualine_a = {},
-        lualine_b = {
-          {
-            "diagnostics",
-            symbols = {
-              error = icons.diagnostics.Error,
-              warn = icons.diagnostics.Warn,
-              info = icons.diagnostics.Info,
-              hint = icons.diagnostics.Hint,
-            },
-          },
+        lualine_a = {
           {
             "buffers",
             show_filename_only = true,
             hide_filename_extension = false,
             show_modified_status = true,
             mode = 2,
-            -- max_length = vim.o.columns * 2 / 3, -- limit to reasonable width
-            filetype_names = {
-              snacks_dashboard = "Dashboard",
-              TelescopePrompt = "Telescope",
-              dashboard = "Dashboard",
-              packer = "Packer",
-              fzf = "FZF",
-              alpha = "Alpha",
-            },
-            symbols = {
-              modified = " ●", -- Text to show when the buffer is modified
-              alternate_file = "#", -- Text to show to identify the alternate file
-              directory = "", -- Text to show when the buffer is a directory
-            },
           },
+        },
+        lualine_b = {
+          { "diagnostics" },
         },
         lualine_c = {},
         lualine_x = {},
-        lualine_y = {
-          LazyVim.lualine.root_dir(),
-        },
+        lualine_y = {},
         lualine_z = {
-          -- {
-          --   function()
-          --     return os.date("%H:%M")
-          --   end,
-          -- },
+          { "tabs", mode = 2 },
         },
       },
       extensions = { "neo-tree", "lazy", "fzf" },

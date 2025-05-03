@@ -4,7 +4,23 @@ return {
   { "windwp/nvim-autopairs", event = "InsertEnter", opts = {} },
   {
     "folke/flash.nvim",
-    keys = { { "s", false } },
+    keys = {
+      { "s", false },
+      { "t", false },
+    },
+  },
+  {
+    "folke/snacks.nvim",
+    opts = {
+      scroll = { enabled = false },
+      picker = {
+        sources = {
+          explorer = { layout = { layout = { position = "right" } } },
+        },
+        hidden = true,
+        ignored = true,
+      },
+    },
   },
   {
     "SmiteshP/nvim-navic",
@@ -29,13 +45,17 @@ return {
   },
   {
     "nvim-lualine/lualine.nvim",
-    keys = {
-      { "<leader>1", "<cmd>LualineBuffersJump! 1<cr>", desc = "Go to buffer 1" },
-      { "<leader>2", "<cmd>LualineBuffersJump! 2<cr>", desc = "Go to buffer 2" },
-      { "<leader>3", "<cmd>LualineBuffersJump! 3<cr>", desc = "Go to buffer 3" },
-      { "<leader>4", "<cmd>LualineBuffersJump! 4<cr>", desc = "Go to buffer 4" },
-      { "<leader>5", "<cmd>LualineBuffersJump! 5<cr>", desc = "Go to buffer 5" },
-    },
+    keys = (function()
+      local keys = {}
+      for i = 1, 9 do
+        table.insert(keys, {
+          "gb" .. i,
+          string.format("<cmd>LualineBuffersJump! %d<cr>", i),
+          desc = "Go to buffer " .. i,
+        })
+      end
+      return keys
+    end)(),
   },
   {
     "mikavilpas/yazi.nvim",

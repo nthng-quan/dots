@@ -16,7 +16,6 @@ return {
       transparent_background = true,
     },
   },
-  { "akinsho/bufferline.nvim", enabled = false },
   {
     "snacks.nvim",
     opts = {
@@ -38,12 +37,9 @@ return {
         },
         },
         sections = {
-          -- { section = "header" },
-          -- { section = "terminal", cmd = "cmatrix", hl = "header", padding = 1, indent = 0 },
           { icon = " ", title = "Recent Files", section = "recent_files", indent = 2, padding = 1 },
           { icon = " ", title = "Projects", section = "projects", indent = 2, padding = 1 },
           { icon = " ", title = "Keymaps", hl = "header", section = "keys", indent = 2, padding = 1 },
-          -- { section = "startup" },
         },
       },
     },
@@ -76,5 +72,19 @@ return {
         end,
       })
     end,
+  },
+  {
+    "folke/noice.nvim",
+    opts = {
+      cmdline = { enabled = false },
+      messages = { enabled = false },
+      presets = { lsp_doc_border = true },
+      views = {
+        hover = {
+          border = { style = "rounded" },
+          size = { max_width = 80 },
+        },
+      },
+    },
   },
 }

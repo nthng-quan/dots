@@ -15,3 +15,12 @@ keymap.set("i", "<C-J>", 'copilot#Accept("\\<CR>")', {
   expr = true,
   replace_keycodes = false,
 })
+
+vim.diagnostic.config({
+  signs = true,
+  underline = true,
+  float = {
+    border = "rounded",
+    focusable = true,
+  },
+})

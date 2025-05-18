@@ -5,7 +5,10 @@
 vim.g.snacks_animate = true
 
 local opt = vim.opt
-opt.wrap = true
+
+opt.wrap = false
+opt.showmode = true
+
 vim.o.guifont = "JetBrainsMono Nerd Font:h13"
 vim.opt.textwidth = 80
 -- vim.g.clipboard = {

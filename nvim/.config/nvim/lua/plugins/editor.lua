@@ -1,12 +1,11 @@
 return {
   { "github/copilot.vim" },
-  { "echasnovski/mini.pairs", enabled = false },
   { "windwp/nvim-autopairs", event = "InsertEnter", opts = {} },
   {
     "folke/flash.nvim",
     keys = {
       { "s", false },
-      { "t", false },
+      { "t", mode = { "n", "x", "o" }, false },
     },
   },
   {

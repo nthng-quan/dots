@@ -4,7 +4,7 @@ Minimal configuration for Ubuntu 24.04 x86_64: Zsh, tmux, Git, Alacritty,
 i3/i3blocks, rofi, dunst, picom, LazyVim, and Yazi.
 
 ```sh
-git clone https://github.com/nthng-quan/dotfiles.git ~/repo/dotfiles
+git clone https://github.com/nthng-quan/dots.git ~/repo/dotfiles
 cd ~/repo/dotfiles
 ./install-deps.sh --dry-run
 ./install-deps.sh --apply

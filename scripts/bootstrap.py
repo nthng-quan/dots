@@ -14,6 +14,7 @@ import zipfile
 p = argparse.ArgumentParser(description=__doc__)
 p.add_argument('--dry-run', action='store_true')
 p.add_argument('--nvim-only', action='store_true')
+p.add_argument('--profile', choices=('desktop', 'cli'), default='desktop')
 a = p.parse_args()
 root = Path(__file__).resolve().parents[1]
 home = Path.home()
@@ -33,7 +34,10 @@ for item in json.loads((root / lockfile).read_text()):
         continue
     subprocess.run(['git', '-C', str(dest), 'fetch', 'origin', item['commit']], check=True)
     subprocess.run(['git', '-C', str(dest), 'checkout', '--detach', item['commit']], check=True)
-for item in ([] if a.nvim_only else json.loads((root / 'releases.lock.json').read_text())):
+releases = [] if a.nvim_only else json.loads((root / 'releases.lock.json').read_text())
+for item in releases:
+    if a.profile == 'cli' and item.get('desktop_only'):
+        continue
     print(f"Release {item['name']} @ {item['version']}")
     if a.dry_run:
         continue

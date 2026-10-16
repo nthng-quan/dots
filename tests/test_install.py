@@ -41,3 +41,12 @@ class InstallTests(unittest.TestCase):
             result = self.run_install(h, check=False)
             self.assertNotEqual(result.returncode, 0)
             self.assertEqual(list(Path(other).iterdir()), [])
+
+    def test_cli_profile_links_only_terminal_configs(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            h = Path(tmp)
+            self.run_install(h, '--profile', 'cli')
+            for name in ('.zshrc', '.zsh_aliases', '.tmux.conf', '.gitconfig', '.config/git/ignore', '.config/nvim/init.lua'):
+                self.assertTrue((h / name).is_symlink(), name)
+            for name in ('i3', 'i3blocks', 'rofi', 'dunst', 'picom', 'alacritty'):
+                self.assertFalse((h / '.config' / name).exists(), name)

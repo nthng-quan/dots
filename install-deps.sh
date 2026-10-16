@@ -2,18 +2,31 @@
 # Ubuntu 24.04 amd64. Run as your normal user; only apt uses sudo.
 set -euo pipefail
 root=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)
-mode=${1:---dry-run}
-case "$mode" in --dry-run|--apply) ;; *) echo 'Usage: ./install-deps.sh [--dry-run|--apply]' >&2; exit 2;; esac
+usage() { echo 'Usage: ./install-deps.sh [--dry-run|--apply] [--profile desktop|cli]' >&2; exit 2; }
+mode=--dry-run
+profile=desktop
+while (($#)); do
+  case "$1" in
+    --dry-run|--apply) mode=$1 ;;
+    --profile) (($# > 1)) || usage; profile=$2; shift ;;
+    *) usage ;;
+  esac
+  shift
+done
+case "$profile" in desktop|cli) ;; *) usage ;; esac
 . /etc/os-release
 [[ "$ID" == ubuntu && "$VERSION_ID" == 24.04 && $(uname -m) == x86_64 ]] || { echo 'Supported target: Ubuntu 24.04 x86_64' >&2; exit 1; }
-packages=(git curl ca-certificates unzip python3 python3-pip python3-venv build-essential cmake ninja-build gettext pkg-config libtool-bin autoconf automake zsh tmux vim fzf ripgrep fd-find eza zoxide jq nodejs npm xclip xsel i3-wm i3blocks i3lock rofi dunst picom alacritty flameshot thunar firefox feh xss-lock x11-xserver-utils x11-utils xinput xfce4-clipman network-manager network-manager-gnome wireplumber pipewire playerctl pavucontrol bluez ibus ibus-unikey power-profiles-daemon libnotify-bin brightnessctl bc fontconfig fonts-dejavu)
+packages=(git curl ca-certificates unzip python3 python3-pip python3-venv build-essential zsh tmux fzf ripgrep fd-find eza zoxide jq nodejs npm)
+if [[ "$profile" == desktop ]]; then
+  packages+=(cmake ninja-build gettext pkg-config libtool-bin autoconf automake vim xclip xsel i3-wm i3blocks i3lock rofi dunst picom alacritty flameshot thunar firefox feh xss-lock x11-xserver-utils x11-utils xinput xfce4-clipman network-manager network-manager-gnome wireplumber pipewire playerctl pavucontrol bluez ibus ibus-unikey power-profiles-daemon libnotify-bin brightnessctl bc fontconfig fonts-dejavu)
+fi
 if [[ "$mode" == --dry-run ]]; then
   printf 'sudo apt-get install -y'; printf ' %q' "${packages[@]}"; printf '\n'
-  python3 "$root/scripts/bootstrap.py" --dry-run
+  python3 "$root/scripts/bootstrap.py" --dry-run --profile "$profile"
   exit
 fi
 [[ $EUID != 0 ]] || { echo 'Run as your normal user, not root.' >&2; exit 1; }
 sudo apt-get update
 sudo apt-get install -y "${packages[@]}"
-python3 "$root/scripts/bootstrap.py"
-printf '\nNext: ./install.sh, then ./sync-plugins.sh\n'
+python3 "$root/scripts/bootstrap.py" --profile "$profile"
+printf '\nNext: ./install.sh --profile %s, then ./sync-plugins.sh\n' "$profile"

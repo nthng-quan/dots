@@ -17,6 +17,22 @@ Run as your normal user. Only apt uses sudo. Open a new terminal afterward.
 Select the i3 session on the login screen. Change your login shell explicitly
 with `chsh -s "$(command -v zsh)"` if desired. No shell or session is changed automatically.
 
+## Terminal-only (SSH/dev hosts)
+
+For servers you SSH into, install just zsh, tmux, Git and Neovim, with no
+desktop packages, i3/rofi/dunst/picom/alacritty configs, or Nerd Font:
+
+```sh
+./install-cli.sh --dry-run
+./install-cli.sh --apply
+```
+
+It runs `install-deps.sh --profile cli`, `install.sh --profile cli` and
+`sync-plugins.sh`. The CLI profile links `.zshrc`, `.zsh_aliases`, `.tmux.conf`,
+`.gitconfig`, `.config/git` and `.config/nvim`, and installs Neovim, Starship,
+Yazi, lazygit and the shell/tmux plugins. Icons render with the font of the
+terminal you connect from, so the server needs no font.
+
 The dependency installer installs Ubuntu packages, checksummed Neovim, Starship,
 Yazi, lazygit, Iosevka Nerd Font, and shell/tmux plugins at locked Git commits.
 Neovim plugin repositories are first checked out using `nvim-plugins.lock.json`,

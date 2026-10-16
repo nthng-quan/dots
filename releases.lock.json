@@ -41,6 +41,7 @@
     "version": "v3.4.0",
     "url": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/Iosevka.zip",
     "sha256": "51c7eebb8f933cc3d10c718a191317e7f028c2c7f0fc7e6f5c699655a797e02f",
-    "commands": []
+    "commands": [],
+    "desktop_only": true
   }
 ]

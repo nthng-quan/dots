@@ -32,10 +32,18 @@ class BootstrapTests(unittest.TestCase):
                     sha256=hashlib.sha256(self.archive.read_bytes()).hexdigest(), commands=['starship'])
         (self.root / 'releases.lock.json').write_text(json.dumps([item]))
 
-    def run_bootstrap(self, check=True):
-        return subprocess.run(['python3', str(self.root / 'scripts/bootstrap.py')],
+    def run_bootstrap(self, *args, check=True):
+        return subprocess.run(['python3', str(self.root / 'scripts/bootstrap.py'), *args],
                               env=dict(os.environ, HOME=str(self.home)),
                               capture_output=True, text=True, check=check)
+
+    def test_cli_profile_skips_desktop_only_release(self):
+        items = json.loads((self.root / 'releases.lock.json').read_text())
+        items.append(dict(name='font', version='test', url='file:///nonexistent.zip', sha256='0', commands=[], desktop_only=True))
+        (self.root / 'releases.lock.json').write_text(json.dumps(items))
+        result = self.run_bootstrap('--profile', 'cli')
+        self.assertNotIn('font', result.stdout)
+        self.assertTrue((self.home / '.local/bin/starship').is_symlink())
 
     def test_repeat_repairs_missing_link_without_downloading(self):
         self.run_bootstrap()

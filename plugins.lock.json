@@ -1,0 +1,57 @@
+[
+  {
+    "path": ".oh-my-zsh",
+    "repo": "ohmyzsh/ohmyzsh",
+    "commit": "9f9b28a13df35af968f0117cb142f0eba9cc6c41"
+  },
+  {
+    "path": ".oh-my-zsh/custom/plugins/zsh-autosuggestions",
+    "repo": "zsh-users/zsh-autosuggestions",
+    "commit": "85919cd1ffa7d2d5412f6d3fe437ebdbeeec4fc5"
+  },
+  {
+    "path": ".oh-my-zsh/custom/plugins/zsh-syntax-highlighting",
+    "repo": "zsh-users/zsh-syntax-highlighting",
+    "commit": "5eb677bb0fa9a3e60f0eff031dc13926e093df92"
+  },
+  {
+    "path": ".oh-my-zsh/custom/plugins/zsh-autocomplete",
+    "repo": "marlonrichert/zsh-autocomplete",
+    "commit": "1043a02ce084e4bb02b416eb8a48d61a39c6c6a8"
+  },
+  {
+    "path": ".tmux/plugins/tmux-resurrect",
+    "repo": "tmux-plugins/tmux-resurrect",
+    "commit": "cff343cf9e81983d3da0c8562b01616f12e8d548"
+  },
+  {
+    "path": ".tmux/plugins/tmux-yank",
+    "repo": "tmux-plugins/tmux-yank",
+    "commit": "acfd36e4fcba99f8310a7dfb432111c242fe7392"
+  },
+  {
+    "path": ".tmux/plugins/tpm",
+    "repo": "tmux-plugins/tpm",
+    "commit": "99469c4a9b1ccf77fade25842dc7bafbc8ce9946"
+  },
+  {
+    "path": ".tmux/plugins/tmux-continuum",
+    "repo": "tmux-plugins/tmux-continuum",
+    "commit": "0698e8f4b17d6454c71bf5212895ec055c578da0"
+  },
+  {
+    "path": ".tmux/plugins/tmux-open",
+    "repo": "tmux-plugins/tmux-open",
+    "commit": "763d0a852e6703ce0f5090a508330012a7e6788e"
+  },
+  {
+    "path": ".tmux/plugins/vim-tmux-navigator",
+    "repo": "christoomey/vim-tmux-navigator",
+    "commit": "c45243dc1f32ac6bcf6068e5300f3b2b237e576a"
+  },
+  {
+    "path": ".tmux/plugins/tmux-cpu",
+    "repo": "tmux-plugins/tmux-cpu",
+    "commit": "bcb110d754ab2417de824c464730c412a3eb2769"
+  }
+]

@@ -1,0 +1,124 @@
+configuration {
+    modi: "drun,window";
+    font: "Ubuntu Medium 13";
+    show-icons: true;
+    icon-theme: "Yaru-dark";
+    terminal: "alacritty";
+    display-drun: "run";
+    display-window: "window";
+    drun-display-format: "{name}";
+    window-format: "{w}  {t}";
+    sort: true;
+    matching: "normal";
+    case-sensitive: false;
+    lines: 14;
+    width: 42;
+    location: 0;
+    anchor: "center";
+    fixed-num-lines: false;
+    border: 0;
+    padding: 0;
+    hide-scrollbar: true;
+    separator-style: "none";
+    click-to-exit: false;
+}
+
+* {
+    foreground:                  #a6adc8;
+    background:                  #11111b;
+    lightbg:                     #1e1e2e;
+    lightfg:                     #6c7086;
+    blue:                        #89b4fa;
+    red:                         #f38ba8;
+
+    bg:                          @background;
+    bg-alt:                      @lightbg;
+    bg-hover:                    #313244;
+    fg:                          @foreground;
+    fg-dim:                      @lightfg;
+    accent:                      #b4befe;
+    urgent:                      @red;
+    border:                      #313244;
+    separatorcolor:              @border;
+
+    text-color:                  @foreground;
+    background-color:            @background;
+}
+
+window {
+    background-color: @background;
+    border: 2px;
+    border-color: @border;
+    border-radius: 10px;
+    padding: 8px;
+}
+
+inputbar {
+    background-color: @bg-alt;
+    border-radius: 6px;
+    padding: 6px 10px;
+    margin: 0 0 6px 0;
+    children: [prompt, entry];
+}
+
+prompt {
+    text-color: @accent;
+    font: "Ubuntu Medium 14";
+    padding: 0 4px 0 0;
+}
+
+entry {
+    text-color: @fg;
+    font: "Ubuntu Medium 13";
+    placeholder-color: @fg-dim;
+    placeholder: "Search...";
+}
+
+listview {
+    background-color: transparent;
+    padding: 2px 0;
+    columns: 1;
+    scrollbar: false;
+}
+
+element {
+    padding: 6px 10px;
+    border-radius: 5px;
+    margin: 1px 0;
+}
+
+element selected {
+    background-color: @bg-hover;
+    text-color: @fg;
+}
+
+element normal {
+    background-color: transparent;
+    text-color: @fg;
+}
+
+element alternate {
+    background-color: transparent;
+    text-color: @fg-dim;
+}
+
+element-text {
+    text-color: inherit;
+    vertical-align: 0.5;
+}
+
+element-icon {
+    size: 28px;
+    padding: 0 10px 0 4px;
+    vertical-align: 0.5;
+}
+
+message {
+    background-color: transparent;
+    text-color: @fg-dim;
+    font: "Ubuntu 11";
+}
+
+textbox {
+    font: "Ubuntu Medium 13";
+}

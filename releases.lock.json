@@ -1,0 +1,46 @@
+[
+  {
+    "name": "nvim",
+    "version": "v0.11.5",
+    "url": "https://github.com/neovim/neovim/releases/download/v0.11.5/nvim-linux-x86_64.tar.gz",
+    "sha256": "b2f91117be5b5ea39edd7297156dc2a4a8df4add6c95a90809a8df19e7ab6f52",
+    "commands": [
+      "nvim"
+    ]
+  },
+  {
+    "name": "starship",
+    "version": "v1.24.2",
+    "url": "https://github.com/starship/starship/releases/download/v1.24.2/starship-x86_64-unknown-linux-musl.tar.gz",
+    "sha256": "00ff3c1f8ffb59b5c15d4b44c076bcca04d92cf0055c86b916248c14f3ae714a",
+    "commands": [
+      "starship"
+    ]
+  },
+  {
+    "name": "yazi",
+    "version": "v25.5.31",
+    "url": "https://github.com/sxyazi/yazi/releases/download/v25.5.31/yazi-x86_64-unknown-linux-musl.zip",
+    "sha256": "a2fdc9c35719fa72d94820893eb2fedd93fd1c418c2cf568702643526c358f7a",
+    "commands": [
+      "yazi",
+      "ya"
+    ]
+  },
+  {
+    "name": "lazygit",
+    "version": "v0.55.1",
+    "url": "https://github.com/jesseduffield/lazygit/releases/download/v0.55.1/lazygit_0.55.1_Linux_x86_64.tar.gz",
+    "sha256": "6385a699dde302b7fdcd1cc8910ae225ed0c19a230285569c586051576f0d6a3",
+    "commands": [
+      "lazygit"
+    ]
+  },
+  {
+    "name": "font",
+    "version": "v3.4.0",
+    "url": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/Iosevka.zip",
+    "sha256": "51c7eebb8f933cc3d10c718a191317e7f028c2c7f0fc7e6f5c699655a797e02f",
+    "commands": []
+  }
+]

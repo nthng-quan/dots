@@ -1,0 +1,247 @@
+[
+  {
+    "path": ".local/share/nvim/lazy/LazyVim",
+    "repo": "LazyVim/LazyVim",
+    "commit": "999700997f72227187d49d8b92667183dc7fc809"
+  },
+  {
+    "path": ".local/share/nvim/lazy/SchemaStore.nvim",
+    "repo": "b0o/SchemaStore.nvim",
+    "commit": "7fca30f2890a6acf9d21d194876c6ac960d92070"
+  },
+  {
+    "path": ".local/share/nvim/lazy/blink.cmp",
+    "repo": "saghen/blink.cmp",
+    "commit": "78336bc89ee5365633bcf754d93df01678b5c08f"
+  },
+  {
+    "path": ".local/share/nvim/lazy/catppuccin",
+    "repo": "catppuccin/nvim",
+    "commit": "edefef779ab08ce1a4a404713e3012b0d202bd35"
+  },
+  {
+    "path": ".local/share/nvim/lazy/conform.nvim",
+    "repo": "stevearc/conform.nvim",
+    "commit": "016802de402556da54c36bd7359b441266b01cdd"
+  },
+  {
+    "path": ".local/share/nvim/lazy/flash.nvim",
+    "repo": "folke/flash.nvim",
+    "commit": "5f0f270fdc7c5b0c21d903ee85b9cb06f2ac636a"
+  },
+  {
+    "path": ".local/share/nvim/lazy/friendly-snippets",
+    "repo": "rafamadriz/friendly-snippets",
+    "commit": "b4d01b0fdf3c9a549961c2f9ffe8dc09be166219"
+  },
+  {
+    "path": ".local/share/nvim/lazy/gitsigns.nvim",
+    "repo": "lewis6991/gitsigns.nvim",
+    "commit": "fd780920613e541cbdfac41bf711583ed49f9249"
+  },
+  {
+    "path": ".local/share/nvim/lazy/grug-far.nvim",
+    "repo": "MagicDuck/grug-far.nvim",
+    "commit": "11595bf747edc270bce2069d1020502ad4ae56cf"
+  },
+  {
+    "path": ".local/share/nvim/lazy/inc-rename.nvim",
+    "repo": "smjonas/inc-rename.nvim",
+    "commit": "ddff8bd3eccedf043bd73f5bf89cf90d2d6d8105"
+  },
+  {
+    "path": ".local/share/nvim/lazy/incline.nvim",
+    "repo": "b0o/incline.nvim",
+    "commit": "debd628e9395f7a9da57bdc31ce75ca6b40a880b"
+  },
+  {
+    "path": ".local/share/nvim/lazy/lazy.nvim",
+    "repo": "folke/lazy.nvim",
+    "commit": "85c7ff3711b730b4030d03144f6db6375044ae82"
+  },
+  {
+    "path": ".local/share/nvim/lazy/lazydev.nvim",
+    "repo": "folke/lazydev.nvim",
+    "commit": "ff2cbcba459b637ec3fd165a2be59b7bbaeedf0d"
+  },
+  {
+    "path": ".local/share/nvim/lazy/lualine.nvim",
+    "repo": "nvim-lualine/lualine.nvim",
+    "commit": "221ce6b2d999187044529f49da6554a92f740a96"
+  },
+  {
+    "path": ".local/share/nvim/lazy/markdown-preview.nvim",
+    "repo": "iamcco/markdown-preview.nvim",
+    "commit": "a923f5fc5ba36a3b17e289dc35dc17f66d0548ee"
+  },
+  {
+    "path": ".local/share/nvim/lazy/mason-lspconfig.nvim",
+    "repo": "mason-org/mason-lspconfig.nvim",
+    "commit": "00b5473cca4db5b410ff4bae724e3b6e21f2687f"
+  },
+  {
+    "path": ".local/share/nvim/lazy/mason.nvim",
+    "repo": "mason-org/mason.nvim",
+    "commit": "2a6940af80375532e5e9e7c1f2fc6319a1b7a69d"
+  },
+  {
+    "path": ".local/share/nvim/lazy/mini.ai",
+    "repo": "nvim-mini/mini.ai",
+    "commit": "d0c4987a1ead2bcf4eb22cc9815c662d76677c08"
+  },
+  {
+    "path": ".local/share/nvim/lazy/mini.comment",
+    "repo": "nvim-mini/mini.comment",
+    "commit": "7b6e37ad79a9d11ff08e6706d5d84eaf4c389213"
+  },
+  {
+    "path": ".local/share/nvim/lazy/mini.files",
+    "repo": "nvim-mini/mini.files",
+    "commit": "3fe8e33d37a8c455762800c39bab9af317dd53b4"
+  },
+  {
+    "path": ".local/share/nvim/lazy/mini.hipatterns",
+    "repo": "nvim-mini/mini.hipatterns",
+    "commit": "8e18b4970f21be0db157104786d2be43058cdd44"
+  },
+  {
+    "path": ".local/share/nvim/lazy/mini.icons",
+    "repo": "nvim-mini/mini.icons",
+    "commit": "f916635dc5ae2f479fbb9ab8184bb9444b62e86c"
+  },
+  {
+    "path": ".local/share/nvim/lazy/mini.surround",
+    "repo": "nvim-mini/mini.surround",
+    "commit": "59ce0acf79e1d930756ef3a7cb4c2369560cf548"
+  },
+  {
+    "path": ".local/share/nvim/lazy/noice.nvim",
+    "repo": "folke/noice.nvim",
+    "commit": "7bfd942445fb63089b59f97ca487d605e715f155"
+  },
+  {
+    "path": ".local/share/nvim/lazy/nui.nvim",
+    "repo": "MunifTanjim/nui.nvim",
+    "commit": "10fc361835c856ba4233ef5ea135b919bf3dce97"
+  },
+  {
+    "path": ".local/share/nvim/lazy/nvim-autopairs",
+    "repo": "windwp/nvim-autopairs",
+    "commit": "3172f40c16563db871a58f20d205c710ad782311"
+  },
+  {
+    "path": ".local/share/nvim/lazy/nvim-dap",
+    "repo": "mfussenegger/nvim-dap",
+    "commit": "cfa2d58f4537aca6ca83e2de1a0d9f1491121264"
+  },
+  {
+    "path": ".local/share/nvim/lazy/nvim-dap-python",
+    "repo": "mfussenegger/nvim-dap-python",
+    "commit": "1808458eba2b18f178f990e01376941a42c7f93b"
+  },
+  {
+    "path": ".local/share/nvim/lazy/nvim-lint",
+    "repo": "mfussenegger/nvim-lint",
+    "commit": "f6230a5c06ba59e6059c14637f1dbe29a7978b9b"
+  },
+  {
+    "path": ".local/share/nvim/lazy/nvim-lspconfig",
+    "repo": "neovim/nvim-lspconfig",
+    "commit": "45a3a444b710511c39abca3b60bb6e23a21e3de5"
+  },
+  {
+    "path": ".local/share/nvim/lazy/nvim-treesitter",
+    "repo": "nvim-treesitter/nvim-treesitter",
+    "commit": "7caec274fd19c12b55902a5b795100d21531391f"
+  },
+  {
+    "path": ".local/share/nvim/lazy/nvim-treesitter-textobjects",
+    "repo": "nvim-treesitter/nvim-treesitter-textobjects",
+    "commit": "5c7b0263797dfd1bd6202f2b219f3b53a80b2187"
+  },
+  {
+    "path": ".local/share/nvim/lazy/nvim-ts-autotag",
+    "repo": "windwp/nvim-ts-autotag",
+    "commit": "d7220b55e16ed3c04e88086256def5d282429493"
+  },
+  {
+    "path": ".local/share/nvim/lazy/nvim-ts-context-commentstring",
+    "repo": "JoosepAlviste/nvim-ts-context-commentstring",
+    "commit": "6141a40173c6efa98242dc951ed4b6f892c97027"
+  },
+  {
+    "path": ".local/share/nvim/lazy/persistence.nvim",
+    "repo": "folke/persistence.nvim",
+    "commit": "b20b2a7887bd39c1a356980b45e03250f3dce49c"
+  },
+  {
+    "path": ".local/share/nvim/lazy/plenary.nvim",
+    "repo": "nvim-lua/plenary.nvim",
+    "commit": "74b06c6c75e4eeb3108ec01852001636d85a932b"
+  },
+  {
+    "path": ".local/share/nvim/lazy/render-markdown.nvim",
+    "repo": "MeanderingProgrammer/render-markdown.nvim",
+    "commit": "8e8795368391036643b622875a6da6a51bcd33f4"
+  },
+  {
+    "path": ".local/share/nvim/lazy/snacks.nvim",
+    "repo": "folke/snacks.nvim",
+    "commit": "882c996cf28183f4d63640de0b4c02ec886d01f2"
+  },
+  {
+    "path": ".local/share/nvim/lazy/todo-comments.nvim",
+    "repo": "folke/todo-comments.nvim",
+    "commit": "31e3c38ce9b29781e4422fc0322eb0a21f4e8668"
+  },
+  {
+    "path": ".local/share/nvim/lazy/tokyonight.nvim",
+    "repo": "folke/tokyonight.nvim",
+    "commit": "cdc07ac78467a233fd62c493de29a17e0cf2b2b6"
+  },
+  {
+    "path": ".local/share/nvim/lazy/trouble.nvim",
+    "repo": "folke/trouble.nvim",
+    "commit": "bd67efe408d4816e25e8491cc5ad4088e708a69a"
+  },
+  {
+    "path": ".local/share/nvim/lazy/ts-comments.nvim",
+    "repo": "folke/ts-comments.nvim",
+    "commit": "a59d6092213447450191122c9346f309161504cb"
+  },
+  {
+    "path": ".local/share/nvim/lazy/venv-selector.nvim",
+    "repo": "linux-cultist/venv-selector.nvim",
+    "commit": "cc4bb3975de8835291f9bb45889e96c6b2795fc4"
+  },
+  {
+    "path": ".local/share/nvim/lazy/vim-fugitive",
+    "repo": "tpope/vim-fugitive",
+    "commit": "3b753cf8c6a4dcde6edee8827d464ba9b8c4a6f0"
+  },
+  {
+    "path": ".local/share/nvim/lazy/vim-slime",
+    "repo": "jpalardy/vim-slime",
+    "commit": "305b4d81ff4630af5137fdeffb54aa0fef14761b"
+  },
+  {
+    "path": ".local/share/nvim/lazy/vim-tmux-navigator",
+    "repo": "christoomey/vim-tmux-navigator",
+    "commit": "e41c431a0c7b7388ae7ba341f01a0d217eb3a432"
+  },
+  {
+    "path": ".local/share/nvim/lazy/which-key.nvim",
+    "repo": "folke/which-key.nvim",
+    "commit": "3aab2147e74890957785941f0c1ad87d0a44c15a"
+  },
+  {
+    "path": ".local/share/nvim/lazy/yanky.nvim",
+    "repo": "gbprod/yanky.nvim",
+    "commit": "adcabd8512bead30184916fa9277e73c021ef099"
+  },
+  {
+    "path": ".local/share/nvim/lazy/yazi.nvim",
+    "repo": "mikavilpas/yazi.nvim",
+    "commit": "cda40833ab50de32a2fd10e29b0d745ecb8cd04d"
+  }
+]

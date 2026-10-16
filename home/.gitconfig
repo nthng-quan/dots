@@ -1,0 +1,6 @@
+[core]
+    editor = nvim
+[alias]
+    lg = log --color --graph --oneline --decorate
+[include]
+    path = ~/.gitconfig.local

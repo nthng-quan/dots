@@ -1,0 +1,11 @@
+if command -v eza >/dev/null; then
+  alias ls='eza --icons -F'
+  alias ll='eza --icons -laF'
+  alias lsa='eza --icons -AF'
+  alias l='eza --icons -CD'
+fi
+alias gs='git status'
+alias gdiff='git diff'
+alias sss='source ~/.zshrc'
+alias update='sudo apt update'
+alias upgrade='sudo apt upgrade'

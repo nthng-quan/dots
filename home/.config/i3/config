@@ -1,0 +1,192 @@
+set $mod Mod4
+
+set $term alacritty
+set $browser firefox
+set $file_manager thunar
+
+font pango:Iosevka Nerd Font 10
+
+floating_modifier $mod
+
+# focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# move
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# orientation
+bindsym $mod+b split h
+bindsym $mod+v split v
+
+# fullscreen
+bindsym $mod+f fullscreen toggle
+
+# layout
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# floating
+bindsym $mod+Shift+space floating toggle
+bindsym $mod+space focus mode_toggle
+
+# workspaces
+set $ws1 " 1 "
+set $ws2 " 2 "
+set $ws3 " 3 "
+set $ws4 " 4 "
+set $ws5 " 5 "
+set $ws6 " 6 "
+set $ws7 " 7 "
+set $ws8 " 8 "
+set $ws9 " 9 "
+set $ws10 " 10 "
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
+
+# move to workspace
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10
+
+# restart / exit
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r restart
+bindsym $mod+Shift+e exec --no-startup-id i3-nagbar -t warning -m 'Exit i3?' -B 'Yes' 'i3-msg exit' -B 'No' ''
+
+# apps
+bindsym $mod+Return exec --no-startup-id $term
+bindsym $mod+Shift+Return exec --no-startup-id $browser
+bindsym $mod+d exec --no-startup-id rofi -show drun
+bindsym $mod+Shift+d exec --no-startup-id rofi -show window
+bindsym $mod+Ctrl+d exec --no-startup-id rofi -show run
+
+# # tmux in split
+# bindsym $mod+minus exec --no-startup-id $term -e tmux
+
+# kill
+bindsym $mod+Shift+q kill
+
+# resize mode
+mode "resize" {
+    bindsym h resize shrink width 10 px or 10 ppt
+    bindsym j resize grow height 10 px or 10 ppt
+    bindsym k resize shrink height 10 px or 10 ppt
+    bindsym l resize grow width 10 px or 10 ppt
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $mod+r mode "default"
+}
+bindsym $mod+r mode "resize"
+
+# gaps
+gaps inner 8
+gaps outer 4
+smart_gaps on
+
+# colors (Catppuccin Mocha)
+# class                 border  bground  text     indicator child_border
+client.focused          #cdd6f4 #1e1e2e #cdd6f4 #cdd6f4   #cdd6f4
+client.focused_inactive #313244 #1e1e2e #6c7086 #313244   #313244
+client.unfocused        #1e1e2e #1e1e2e #585b70 #1e1e2e   #1e1e2e
+client.urgent           #f38ba8 #1e1e2e #f38ba8 #f38ba8   #f38ba8
+client.placeholder      #1e1e2e #1e1e2e #1e1e2e #1e1e2e   #1e1e2e
+
+client.background       #1e1e2e
+
+# window borders
+default_border pixel 2
+default_floating_border pixel 2
+hide_edge_borders both
+
+# no title bar
+for_window [class=".*"] title_window_icon padding 0px
+
+# autostart
+exec --no-startup-id $term
+exec_always --no-startup-id xss-lock --transfer-sleep-lock -- ~/.config/i3/lock.sh
+exec_always --no-startup-id picom --config ~/.config/picom/picom.conf
+exec_always --no-startup-id dunst
+exec --no-startup-id xfce4-clipman
+exec_always --no-startup-id nm-applet
+
+# audio (PipeWire/WirePlumber)
+bindsym XF86AudioRaiseVolume exec --no-startup-id wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%+ && pkill -SIGRTMIN+10 i3blocks
+bindsym XF86AudioLowerVolume exec --no-startup-id wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%- && pkill -SIGRTMIN+10 i3blocks
+bindsym XF86AudioMute exec --no-startup-id wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle && pkill -SIGRTMIN+10 i3blocks
+bindsym XF86AudioMicMute exec --no-startup-id wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle && notify-send "Mic" "$(wpctl get-mute @DEFAULT_AUDIO_SOURCE@)"
+bindsym $mod+Shift+m exec --no-startup-id pavucontrol
+
+# screen brightness
+bindsym XF86MonBrightnessUp   exec --no-startup-id ~/.config/i3/brightness.sh up
+bindsym XF86MonBrightnessDown exec --no-startup-id ~/.config/i3/brightness.sh down
+
+# media player
+bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
+bindsym XF86AudioPrev exec --no-startup-id playerctl previous
+bindsym XF86AudioNext exec --no-startup-id playerctl next
+
+# caffeine
+bindsym $mod+Ctrl+Shift+c exec --no-startup-id ~/.config/i3/caffeine.sh toggle
+
+# bluetooth
+bindsym $mod+Shift+b exec --no-startup-id bluetoothctl power on && notify-send "Bluetooth" "On" || bluetoothctl power off && notify-send "Bluetooth" "Off"
+bindsym $mod+Ctrl+b exec --no-startup-id alacritty -e bluetoothctl
+
+# unikey (Vietnamese input)
+bindsym $mod+Ctrl+u exec --no-startup-id ~/.config/i3/ibus-toggle.sh
+
+# wifi
+bindsym $mod+Ctrl+w exec --no-startup-id alacritty -e nmtui
+bindsym $mod+Ctrl+p exec --no-startup-id ~/.config/i3/power-toggle.sh
+
+bar {
+    status_command i3blocks
+    position top
+font pango:Iosevka Nerd Font 11.5
+    strip_workspace_numbers no
+    colors {
+        background #1e1e2e
+        statusline #cdd6f4
+        separator  #45475a
+        focused_workspace  #cdd6f4 #cdd6f4 #1e1e2e
+        active_workspace   #585b70 #313244 #cdd6f4
+        inactive_workspace #313244 #1e1e2e #6c7086
+        urgent_workspace   #f38ba8 #f38ba8 #1e1e2e
+    }
+}
+
+# lock & suspend
+bindsym $mod+x exec --no-startup-id ~/.config/i3/lock.sh
+bindsym $mod+Shift+x exec --no-startup-id ~/.config/i3/lock.sh && systemctl suspend
+
+# screenshots
+exec --no-startup-id flameshot
+bindsym Print exec --no-startup-id flameshot gui --clipboard --path ~/Pictures/Screenshots
+bindsym Shift+Print exec --no-startup-id flameshot full --clipboard --path ~/Pictures/Screenshots
+bindsym Ctrl+Print exec --no-startup-id flameshot launcher
+
+# Disable middle-click events to prevent selection paste.
+exec_always --no-startup-id test ! -x ~/.config/i3/local.sh || ~/.config/i3/local.sh

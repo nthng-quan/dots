@@ -17,6 +17,76 @@ Run as your normal user. Only apt uses sudo. Open a new terminal afterward.
 Select the i3 session on the login screen. Change your login shell explicitly
 with `chsh -s "$(command -v zsh)"` if desired. No shell or session is changed automatically.
 
+## What gets installed
+
+Versions and commits are pinned in the lock files listed below; those files are
+the source of truth. ✓ = installed by that profile.
+
+### Tools (checksummed GitHub releases, `releases.lock.json`)
+
+| Tool | Version | Purpose | cli | desktop |
+|---|---|---|:-:|:-:|
+| [Neovim](https://github.com/neovim/neovim) | v0.11.5 | Editor | ✓ | ✓ |
+| [Starship](https://github.com/starship/starship) | v1.24.2 | Shell prompt | ✓ | ✓ |
+| [Yazi](https://github.com/sxyazi/yazi) | v25.5.31 | Terminal file manager | ✓ | ✓ |
+| [lazygit](https://github.com/jesseduffield/lazygit) | v0.55.1 | Git TUI | ✓ | ✓ |
+| [Iosevka Nerd Font](https://github.com/ryanoasis/nerd-fonts) | v3.4.0 | Terminal font with icons | | ✓ |
+
+Installed to `~/.local/share/dotfiles/<name>` and linked into `~/.local/bin`.
+
+### Shell and tmux plugins (Git commits, `plugins.lock.json`)
+
+| Plugin | Purpose |
+|---|---|
+| [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh) | Zsh framework (`git` plugin) |
+| [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) | History-based suggestions |
+| [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting) | Command highlighting |
+| [zsh-autocomplete](https://github.com/marlonrichert/zsh-autocomplete) | Live completion menu |
+| [tpm](https://github.com/tmux-plugins/tpm) | tmux plugin manager |
+| [tmux-resurrect](https://github.com/tmux-plugins/tmux-resurrect) + [tmux-continuum](https://github.com/tmux-plugins/tmux-continuum) | Save/restore sessions |
+| [tmux-yank](https://github.com/tmux-plugins/tmux-yank) | Copy to system clipboard |
+| [tmux-open](https://github.com/tmux-plugins/tmux-open) | Open selection as file/URL/search |
+| [tmux-cpu](https://github.com/tmux-plugins/tmux-cpu) | CPU/RAM in status bar |
+| [vim-tmux-navigator](https://github.com/christoomey/vim-tmux-navigator) | Move between tmux panes and Neovim splits |
+
+Both profiles install all of these.
+
+### Neovim (`lazy-lock.json`, `nvim-plugins.lock.json`)
+
+[LazyVim](https://github.com/LazyVim/LazyVim) with the Catppuccin Mocha theme and
+these extras: blink.cmp, yanky, inc-rename, JSON, Markdown, mini.comment,
+mini.surround, mini.files, Snacks explorer and picker. Also vim-fugitive,
+vim-slime, venv-selector with nvim-dap-python, and incline. bufferline and
+mini.pairs are disabled. Treesitter's `tree-sitter` CLI and language servers are
+installed by Mason on first launch.
+
+### Ubuntu packages (`install-deps.sh`, via apt)
+
+| Group | Packages | cli | desktop |
+|---|---|:-:|:-:|
+| Base | git, curl, ca-certificates, unzip, jq | ✓ | ✓ |
+| Build / runtimes | build-essential, python3, python3-pip, python3-venv, nodejs, npm | ✓ | ✓ |
+| Shell / terminal | zsh, tmux, fzf, ripgrep, fd-find, eza, zoxide | ✓ | ✓ |
+| Extra build tools | cmake, ninja-build, gettext, pkg-config, libtool-bin, autoconf, automake, vim | | ✓ |
+| Window manager | i3-wm, i3blocks, i3lock, xss-lock, rofi, dunst, picom, feh, libnotify-bin | | ✓ |
+| Apps | alacritty, firefox, thunar, flameshot, xfce4-clipman, pavucontrol | | ✓ |
+| X11 / clipboard | xclip, xsel, x11-xserver-utils, x11-utils, xinput | | ✓ |
+| Network / audio / Bluetooth | network-manager, network-manager-gnome, pipewire, wireplumber, playerctl, bluez | | ✓ |
+| Input / power / display | ibus, ibus-unikey, power-profiles-daemon, brightnessctl, bc | | ✓ |
+| Fonts | fontconfig, fonts-dejavu | | ✓ |
+
+### Configs linked by `install.sh`
+
+| Path | cli | desktop |
+|---|:-:|:-:|
+| `.zshrc`, `.zsh_aliases` | ✓ | ✓ |
+| `.tmux.conf` | ✓ | ✓ |
+| `.gitconfig`, `.config/git/` | ✓ | ✓ |
+| `.config/nvim/` | ✓ | ✓ |
+| `.config/i3/`, `.config/i3blocks/` | | ✓ |
+| `.config/rofi/`, `.config/dunst/`, `.config/picom/` | | ✓ |
+| `.config/alacritty/` | | ✓ |
+
 ## Terminal-only (SSH/dev hosts)
 
 For servers you SSH into, install just zsh, tmux, Git and Neovim, with no

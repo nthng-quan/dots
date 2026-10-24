@@ -9,3 +9,6 @@ alias gdiff='git diff'
 alias sss='source ~/.zshrc'
 alias update='sudo apt update'
 alias upgrade='sudo apt upgrade'
+
+# kitty: copy terminfo to the remote on connect
+(( $+commands[kitten] )) && alias s='kitten ssh'

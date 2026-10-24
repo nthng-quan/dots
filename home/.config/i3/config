@@ -1,6 +1,6 @@
 set $mod Mod4
 
-set $term alacritty
+set $term kitty
 set $browser firefox
 set $file_manager thunar
 
@@ -153,13 +153,13 @@ bindsym $mod+Ctrl+Shift+c exec --no-startup-id ~/.config/i3/caffeine.sh toggle
 
 # bluetooth
 bindsym $mod+Shift+b exec --no-startup-id bluetoothctl power on && notify-send "Bluetooth" "On" || bluetoothctl power off && notify-send "Bluetooth" "Off"
-bindsym $mod+Ctrl+b exec --no-startup-id alacritty -e bluetoothctl
+bindsym $mod+Ctrl+b exec --no-startup-id $term -e bluetoothctl
 
 # unikey (Vietnamese input)
 bindsym $mod+Ctrl+u exec --no-startup-id ~/.config/i3/ibus-toggle.sh
 
 # wifi
-bindsym $mod+Ctrl+w exec --no-startup-id alacritty -e nmtui
+bindsym $mod+Ctrl+w exec --no-startup-id $term -e nmtui
 bindsym $mod+Ctrl+p exec --no-startup-id ~/.config/i3/power-toggle.sh
 
 bar {

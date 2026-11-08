@@ -127,6 +127,9 @@ for_window [class=".*"] title_window_icon padding 0px
 # autostart
 exec --no-startup-id $term
 exec_always --no-startup-id xss-lock --transfer-sleep-lock -- ~/.config/i3/lock.sh
+# wallpaper: rotate ~/Pictures/wallpapers/ocean every 15 min; $mod+Ctrl+n = next
+exec_always --no-startup-id ~/.config/i3/wallpaper-cycle.sh
+bindsym $mod+Ctrl+n exec --no-startup-id ~/.config/i3/wallpaper-cycle.sh next
 exec_always --no-startup-id picom --config ~/.config/picom/picom.conf
 exec_always --no-startup-id dunst
 exec --no-startup-id xfce4-clipman

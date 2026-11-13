@@ -17,7 +17,7 @@ root = Path(__file__).resolve().parents[1]
 target = a.target.expanduser().absolute()
 backup = target / '.local/state/dotfiles/backups' / datetime.datetime.now().strftime('%Y%m%d-%H%M%S-%f')
 for source in sorted((root / 'home').rglob('*')):
-    if not source.is_file():
+    if not source.is_file() or source.name == 'README.md':  # docs stay in the repo
         continue
     rel = source.relative_to(root / 'home')
     if a.profile == 'cli' and not any(rel == Path(p) or Path(p) in rel.parents for p in CLI_PATHS):

@@ -24,6 +24,9 @@ class InstallTests(unittest.TestCase):
             for src in (ROOT / 'home').rglob('*'):
                 if src.is_file():
                     dest = h / src.relative_to(ROOT / 'home')
+                    if src.name == 'README.md':  # docs stay in the repo
+                        self.assertFalse(os.path.lexists(dest))
+                        continue
                     self.assertTrue(dest.is_symlink())
                     self.assertEqual(dest.resolve(), src)
             backups = list((h / '.local/state/dotfiles/backups').iterdir())

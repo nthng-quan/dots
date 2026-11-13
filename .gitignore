@@ -4,3 +4,15 @@
 *~
 .env*
 __pycache__/
+# credentials / machine-only: never commit
+*.ovpn
+*.pem
+*.key
+*.p12
+id_rsa*
+id_ed25519*
+secrets*
+*credentials*
+.netrc
+vpn/
+home/.config/i3/local.sh

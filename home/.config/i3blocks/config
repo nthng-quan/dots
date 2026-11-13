@@ -14,32 +14,50 @@ color=#585b70
 min_width=30
 align=center
 
-[media_prev]
-command=~/.config/i3/media-prev.sh
-interval=once
+[media]
+command=~/.config/i3/media-block.sh
+interval=5
 signal=11
-color=#a6adc8
 separator=false
+separator_block_width=10
+
+[media_prev]
+command=~/.config/i3/media-ctl.sh prev
+interval=5
+signal=11
+separator=false
+separator_block_width=6
 
 [media_pp]
-command=~/.config/i3/media-pp.sh
-interval=once
+command=~/.config/i3/media-ctl.sh pp
+interval=5
 signal=11
-color=#a6adc8
 separator=false
+separator_block_width=6
 
 [media_next]
-command=~/.config/i3/media-next.sh
-interval=once
+command=~/.config/i3/media-ctl.sh next
+interval=5
 signal=11
-color=#a6adc8
 separator=false
+separator_block_width=15
 
 [volume]
 command=~/.config/i3/volume-block.sh
 interval=once
 signal=10
 color=#a6adc8
+separator_block_width=15
+
+[display]
+command=~/.config/i3/display-block.sh
+interval=5
+separator_block_width=15
+
+[mic]
+command=~/.config/i3/mic-block.sh
+interval=5
+signal=12
 separator_block_width=15
 
 [brightness]

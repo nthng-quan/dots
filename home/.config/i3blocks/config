@@ -75,6 +75,12 @@ command=~/.config/i3/power-block.sh
 interval=10
 color=#585b70
 
+[sdh]
+command=~/.config/i3/sdh-block.sh
+interval=600
+signal=13
+separator_block_width=15
+
 [battery]
 command=~/.config/i3/battery-block.sh
 interval=30

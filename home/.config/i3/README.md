@@ -42,6 +42,7 @@ colors come from `colors.sh`; blocks print through `output` in `block.sh`.
 | brightness | `BRT %` | |
 | vpn | green `VPN` when the private `vvpn` (openvpn3 wrapper) is connected; hidden when `vvpn` isn't on `PATH` | |
 | power | power profile | |
+| Mst | `Mst +N` unread HCMUS graduate notices (needs `~/tools/sdh-reader`, else hidden); peach dunst popup per new notice, reminder every 2 h (`MST_REMIND` s) while unread | open the reader |
 | battery, date | | |
 
 ## Background scripts
